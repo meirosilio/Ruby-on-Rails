@@ -1,0 +1,13 @@
+require 'rest-client'
+
+
+
+response = RestClient.get("https://www.bing.com/search?q=meir+rosilio&qs=n&form=QBRE&sp=-1&pq=undefined&sc=0-12&sk=&cvid=172CF8AD1EA44458A6E227C5AA291548", headers={})
+
+print "\nThis is the Response Code: #{response.code}\n"
+
+puts "These are the cookies:"
+
+puts response.cookies
+
+puts "These are the Headers:"
