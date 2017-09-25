@@ -1,0 +1,50 @@
+
+<!--
+<form action="/users/<%=@user.id %>" method="post" accept-charset="UTF-8">
+
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="username">Username</label>
+  <input type="text" name="user[username]" value="<%= @user.username %>"/></br>
+
+  <label for="email">Email</label>
+  <input type="email" name="user[email]" value="<%= @user.email %>"></br>
+
+  <label for="password">Password</label>
+  <input type="password" name="user[password]" value="<%=@user.password%>"></br>
+
+  <input type="submit" name="commit" value="update">
+
+</form> -->
+
+<!--<%= form_tag(controller: "users", action: "update", method: :post) do %>
+
+    <input type="hidden" name="_method" value="patch">
+    <%=label_tag :username %>
+    <%=text_field_tag :username, value=@user.username %><br>
+
+    <%=label_tag :email %>
+    <%=email_field_tag :email, value=@user.email %><br>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password, value=@user.password %> <br>
+
+    <%= submit_tag  %>
+
+
+<% end %>-->
+
+
+<%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %> </br>
+
+    <%= f.label :email %>
+    <%= f.email_field :email %> </br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %> </br>
+
+    <%= f.submit %>
+<% end %>

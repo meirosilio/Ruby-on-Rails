@@ -1,0 +1,53 @@
+<!--
+<h4>form_with_html</h4>
+<form action="/users" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="username">Username</label>
+  <input id="username" type="text" name="user[username]"><br>
+
+  <label for="email">Email</label>
+  <input id="email" type="email" name="user[email]"><br>
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="user[password]"><br>
+
+  <input type="submit" value="Create">
+</form>
+</br>-->
+
+<!--
+<h4>same_form_with_form_tag(rails) does not send hash or array</h4>
+
+<%=form_tag("/users", method: :post) do%>
+
+    <%=label_tag :username%>
+    <%=text_field_tag :username %></br>
+
+    <%=label_tag :email%>
+    <%=email_field_tag :email %></br>
+
+    <%=label_tag :Password %>
+    <%=password_field_tag :password %></br>
+
+    <%= submit_tag "Create" %>
+
+<% end %></br>-->
+
+
+<h4>same_form_with_form_for(rails) send hash or array</h4>
+
+<%=form_for(@user) do |f| %>
+
+    <%=f.label :username %>
+    <%=f.text_field :username %> </br>
+
+    <%=f.label :email %>
+    <%=f.email_field :email, placeholder: "example@gmail.com"%> </br>
+
+    <%=f.label :password %>
+    <%=f.password_field  :password %> </br>
+
+    <%=f.submit %>
+
+<% end %>
