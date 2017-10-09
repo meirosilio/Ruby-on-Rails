@@ -1,0 +1,16 @@
+
+<%= provide(:title," | New Post") %>
+<%= provide(:page_titles, "New Post") %>
+
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= bootstrap_form_for(@post, url:post_path) do |f| %>
+
+        <%= f.text_field :post_title %>
+        <%= f.text_area :post_content, rows:"10" %>
+        <%= f.submit "Create New Post", class:"btn btn-lg" %>
+
+    <% end %>
+  </div>
+</div>

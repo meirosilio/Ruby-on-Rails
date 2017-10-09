@@ -1,0 +1,135 @@
+@import "bootstrap";
+
+.navbar{
+  background-color: #2E2F30;
+}
+a.navbar-links{
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+  margin-right: 5px;
+}
+a.dropdown-toggle{
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+ul.dropdown-menu.show{
+  background-color: #2E2F30;
+  right: 0;
+  left: auto;
+}
+
+
+
+
+/*jumbotron*/
+.jumbotron{
+  background-color: #00C795;
+}
+
+.btn-lg{
+  color:#2a2b2c;
+  background-color: transparent;
+  border-color: #2a2b2c;
+}
+.btn-lg:hover{
+  color: #fff;
+  background-color: #2a2b2c;
+  border-color: #2a2b2c;
+}
+
+.how-does-it-works-title{
+  padding: 10px;
+  margin: 10px 0 20px 0;
+}
+
+.how-does-it-works-content{
+  padding: 20px;
+  margin: 20px;
+}
+
+.page-title{
+  margin-top:20px;
+  padding: 20px;
+}
+
+/* footer */
+
+footer{
+  background-color: #2a2b2c;
+  height:100px;
+  width: 100%;
+  padding: 10px;
+  margin-top:20%;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fbfbfb;
+  text-decoration: none;
+}
+
+footer small {
+  color: #fff;
+  float: left;
+  margin: 10px;
+}
+
+footer ul {
+  float: right;
+  margin: 10px;
+  list-style: none;
+
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+/* form_for */
+.form-input{
+}
+
+input{
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+label{
+  color:#2a2b2c;
+  margin-top: 5px;
+}
+
+input.btn.btn-lg{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+input.btn.btn-lg:hover{
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color:#2a2b2c;
+  color: #fff;
+}
+span.help-block{
+  color: red;
+}
+div.card{
+  border-color: #00C795;
+  background-color:#fbfbfb;
+  padding: 10px;
+  margin-top:10px;
+}
+
+

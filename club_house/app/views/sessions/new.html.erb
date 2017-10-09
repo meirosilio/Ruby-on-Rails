@@ -1,0 +1,14 @@
+
+<%provide(:title,"| Signin")%>
+
+<%= provide(:page_titles, "Sign In") %>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= bootstrap_form_for(:session, url:signin_path) do |f| %>
+        <%= f.email_field :email %>
+        <%= f.password_field :password %>
+        <%= f.submit "Signin", class:"btn btn-lg"%>
+    <% end  %>
+  </div>
+</div>
