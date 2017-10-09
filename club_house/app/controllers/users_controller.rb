@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       signin @user
+      remember @user
       flash[:success] = "Welcome #{@user.name}"
       redirect_to posts_path
     else

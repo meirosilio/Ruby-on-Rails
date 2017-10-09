@@ -8,6 +8,13 @@
     <%= bootstrap_form_for(:session, url:signin_path) do |f| %>
         <%= f.email_field :email %>
         <%= f.password_field :password %>
+
+        <small>Click below if you want we will remember you on this computer</small>
+        <%= f.check_box :remember_me %>
+
+
+
+
         <%= f.submit "Signin", class:"btn btn-lg"%>
     <% end  %>
   </div>

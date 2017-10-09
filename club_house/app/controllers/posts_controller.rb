@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :require_signin, only: [:new, :create]
+
 
   def index
     @posts= Post.all
@@ -21,6 +23,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def require_signin
+    unless signed_in?
+      flash[:danger] = "You must sign in to acquire an access"
+      redirect_to signin_path # halts request cycle
+    end
+  end
 
 
 

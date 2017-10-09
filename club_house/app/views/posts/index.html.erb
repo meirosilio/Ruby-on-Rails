@@ -6,8 +6,13 @@
   <div class="card col-md-8 offset-md-2">
     <div class="card-body">
       <h4 class="card-title"><%= post.post_title %></h4>
-      <% user=User.find_by(id:post.user_id) %>
-      <h6 class="card-subtitle mb-2 text-muted">Created by <%=user.name%> <%= time_ago_in_words(post.created_at)%> ago</h6>
+      <% if signed_in? %>
+          <% user=User.find_by(id:post.user_id) %>
+          <i class="card-subtitle mb-1 text-muted">Created by <%=user.name%> <%= time_ago_in_words(post.created_at)%> ago</i>
+      <% else %>
+          <i><%= link_to "Sign In to find who post it", signin_path, class: "card-link" %></i>
+      <% end %>
+
       <p class="card-text"><%= post.post_content%></p>
     </div>
   </div>
