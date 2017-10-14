@@ -1,0 +1,35 @@
+<header>
+
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+
+
+    <%= link_to "Private Event Bride", root_path, class: "navbar-brand"  %>
+
+    <button class="navbar-toggler navbar-toggler-right"
+            type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse"  id="navbarText">
+      <ul class= "nav navbar-nav ml-auto justify-content-end">
+
+
+        <li class="nav-item">
+          <i class="fa fa-sign-in fa-lg"> </i>
+          <%= link_to "Sign in", new_user_session_path%>	&nbsp;
+        </li>
+
+
+        <li class="nav-item">
+        <i class="fa fa-user fa-lg"> </i>
+        <%= link_to "Sign up", new_user_registration_path%>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+
+
+</header>
