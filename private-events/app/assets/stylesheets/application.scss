@@ -1,12 +1,12 @@
-@import "Bootstrap";
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "material";
 
 //topography
 h1,h2,h3,h4,h5,h6,p,i {
   font-family: 'Playfair Display', serif;
 }
+
 p.subtitle{
   font-size: 20px;
 }
@@ -27,22 +27,26 @@ a:any-link{
 }
 
 .jumbotron {
+  border-radius: 0;
+
   background-image: url("copy.jpg");
   height: 500px;
 }
+
 .card{
   background-color: rgba(255, 255, 255, 0.95);
   margin-top: 17%;
   margin-left: 25%;
   border-color: #fff;
   border-radius: 5px;
-
 }
+
 a.btn.btn-primary.btn-lg{
   background-color: transparent;
   color: #f6682F;
   border-color: #f6682F;
 }
+
 a.btn.btn-primary.btn-lg:hover{
   background-color: #f6682F;
   border-color:#fff;
@@ -54,26 +58,73 @@ a.btn.btn-primary.btn-lg:hover{
 }
 
 h1.call-to-action{
+  margin-top: 7px;
   margin-bottom: 0;
 }
 
+body{
+  background-color:#f2f2f2;
+}
 
 //footer
 footer{
-  clear: both;
+  margin-top: 13%;
   background-color:#fff;
 }
 h1, h2, h4, i{
   color: #f6682F;
 }
 
-
 i.icon-signin{
   color: #f6682F;
+}
+
+//sign in
+#vlidation-errors{
+  margin-left: 25%;
+  margin-right: 25%;
 
 }
 
-body{
-  background-color: #F7F7F7;
+.field{
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.actions{
+  margin-top: 5px;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 5px;
+}
+
+input.btn.btn-lg{
+  background-color: transparent;
+  color: #f6682F;
+  border-color: #f6682F;
+}
+
+input.btn.btn-lg:hover{
+  background-color: #f6682F;
+  border-color:#fff;
+  color: #fff;
+}
+.page-title{
+  margin-top:10px;
+  padding: 10px;
+}
+
+input{
+  width: 100%;
+  padding: 7px;
+}
+
+//sign in
+input#user_remember_me{
+  margin-top: 10px;
+  width: 13px;
+  height: 13px;
+  border-radius: 2%;
+
 }
 
