@@ -24,7 +24,7 @@
           <p><i class="fa fa-user" aria-hidden="true"></i> Eevent creator: <%= @user_name %> </p>
           <p><i class="fa fa-map-marker" aria-hidden="true"></i> Eevent location: <%= @event.location %></p>
           <p><i class="fa fa-calendar" aria-hidden="true"></i> Eevent date: <%= @event.date %> </p>
-          <p><i class="fa fa-users" aria-hidden="true"></i> Number of attendants: <%= 10 %> </p>
+          <p><i class="fa fa-users" aria-hidden="true"></i> Number of attendants: <%= @event.number_of_attendants %> </p>
 
         </div>
       </div>
@@ -72,3 +72,6 @@
 
   </div>
 </div>
+
+
+

@@ -3,7 +3,9 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @events = Event.all
+    @events=Event.all
+    @upcoming_events = Event.upcoming
+    @past_events = Event.past
   end
 
   def new
@@ -13,7 +15,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.create(event_params)
     if @event.save
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       render :new
     end

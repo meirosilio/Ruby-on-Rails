@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :attended_events,  :through => :event_attendees
 
 
+
   def attending?(event)
     event.attendees.include?(self)
   end
@@ -20,6 +21,14 @@ class User < ApplicationRecord
 
   def cancel!(event)
     self.event_attendees.find_by(attended_event_id:event.id).destroy
+  end
+
+  def number_of_attended_events
+    self.event_attendees.count
+  end
+
+  def number_of_hosted_events
+    self.events.count
   end
 
 end

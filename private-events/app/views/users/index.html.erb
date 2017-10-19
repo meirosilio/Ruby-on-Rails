@@ -15,7 +15,6 @@
       <th>Email</th>
       <th># of attended events</th>
       <th># of hosted events</th>
-      <th>Total events</th>
       <th>Action</th>
     </tr>
     </thead>
@@ -25,9 +24,8 @@
         <tr>
           <td> <%= user.full_name %> </td>
           <td> <%= user.email %> </td>
-          <td>10 events</td>
-          <td>10 events</td>
-          <td>10 events</td>
+          <td> Attend to <%= user.number_of_attended_events %> events </td>
+          <td> Hosting <%= user.number_of_hosted_events %> events</td>
           <td> <%= link_to "Profile", user_path(user) %>  </td>
         </tr>
     <% end %>

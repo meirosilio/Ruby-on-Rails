@@ -5,23 +5,79 @@
 </div>
 
 
-<div class="container-fluid">
-  <div class="row">
+<div id="index-tab" class="mx-5" >
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <h4 class="ml-5 mr-3"><a  href="#1" data-toggle="tab">Upcoming Events</a></h4>
+    </li>
+    <li>
+      <h4 class="mx-3"><a href="#2" data-toggle="tab">Previous Events</a></h4>
+    </li>
+  </ul>
 
-      <% @events.each do |event| %>
-          <div class="card" id="all-events">
-            <div class="card-block" id="card-block-all-event">
-              <h4 class="card-title"><%= event.title %> </h4>
-              <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
-              <p class="card-text">The event <%= event.title %> created by <%= User.find(event.creator_id).full_name %>.
-                It will took place at  <%= event.location %>   </p>
-              <div class="list-group list-group-flush">
-                <li class="list-group-item"> <%=link_to "Show Details", event_path(event) ,class:"card-link"%></li>
+  <div class="tab-content  ">
+    <div class="tab-pane active" id="1">
+
+
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <% @upcoming_events.each do |event| %>
+              <div class="card" id="all-events">
+                <div class="card-block" id="card-block-all-event">
+                  <h4 class="card-title"><%= event.title %> </h4>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+                  <p class="card-text">The event <%= event.title %> created by <%= User.find(event.creator_id).full_name %>.
+                    It will took place at  <%= event.location %>   </p>
+                  <div class="list-group list-group-flush">
+                    <li class="list-group-item"> <%=link_to "Show Details", event_path(event) ,class:"card-link"%></li>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-      <% end %>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="tab-pane" id="2">
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <% @past_events.each do |event| %>
+              <div class="card" id="all-events">
+                <div class="card-block" id="card-block-all-event">
+                  <h4 class="card-title"><%= event.title %> </h4>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+                  <p class="card-text">The event <%= event.title %> created by <%= User.find(event.creator_id).full_name %>.
+                    It will took place at  <%= event.location %>   </p>
+                  <div class="list-group list-group-flush">
+                    <li class="list-group-item"> <%=link_to "Show Details", event_path(event) ,class:"card-link"%></li>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div>
 
   </div>
-
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
