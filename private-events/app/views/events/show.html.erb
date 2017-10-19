@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-7 my-5"><h1> Learn more about: <%= @event.title %> </h1></div>
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6" id="accordion" role="tablist">
+
+    <div class="card">
+
+      <div class="card-header" role="tab" id="headingOne">
+        <h5 class="mb-0">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            General Information
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <p><i class="fa fa-glass" aria-hidden="true"></i> Eevent name: <%= @event.title %> </p>
+          <p><i class="fa fa-user" aria-hidden="true"></i> Eevent creator: <%= @user_name %> </p>
+          <p><i class="fa fa-map-marker" aria-hidden="true"></i> Eevent location: <%= @event.location %></p>
+          <p><i class="fa fa-calendar" aria-hidden="true"></i> Eevent date: <%= @event.date %> </p>
+          <p><i class="fa fa-users" aria-hidden="true"></i> Number of attendants: <%= 10 %> </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <div class="card-header" role="tab" id="headingTwo">
+        <h5 class="mb-0">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Description
+          </a>
+        </h5>
+      </div>
+
+      <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <%= @event.description %>
+        </div>
+      </div>
+    </div>
+
+
+
+    <% if current_user.attending?(@event) %>
+        <%= form_for(current_user.event_attendees.find_by(attended_event_id: @event.id), html:{method: :delete}) do |f| %>
+            <%= f.submit "Cancel", class: "btn btn-primary btn-lg  col-md-12 my-3"%>
+        <% end %>
+    <% else %>
+        <%= form_for(current_user.event_attendees.build(attended_event_id: @event.id)) do |f| %>
+            <%= f.hidden_field :attended_event_id %>
+            <%= f.submit "Attend", class: "btn btn-primary btn-lg  col-md-12 my-3" %>
+        <% end %>
+
+    <% end %>
+
+
+
+
+
+
+    <%= link_to "<< Back To Events", events_path%>
+
+  </div>
+</div>

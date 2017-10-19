@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="col-md-4 mx-3"></div>
+  <div class="col-md-4 ml-5 my-3"><h1>Meet our community</h1></div>
+</div>
+
+
+<div class="container my-0">
+
+  <table class="table table-striped table-hover ">
+
+    <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th># of attended events</th>
+      <th># of hosted events</th>
+      <th>Total events</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @users.each do |user| %>
+        <tr>
+          <td> <%= user.full_name %> </td>
+          <td> <%= user.email %> </td>
+          <td>10 events</td>
+          <td>10 events</td>
+          <td>10 events</td>
+          <td> <%= link_to "Profile", user_path(user) %>  </td>
+        </tr>
+    <% end %>
+
+
+    </tbody>
+  </table>
+
+</div>

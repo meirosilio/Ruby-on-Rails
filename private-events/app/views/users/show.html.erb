@@ -1,0 +1,28 @@
+
+<div class="row">
+  <div class="col-md-4 mx-3"></div>
+  <div class="col-md-4 ml-5 my-3"><h1> <%= @user.full_name %>'s events </h1></div>
+</div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <% @user.events.each do |event| %>
+        <div class="card" id="all-events">
+          <div class="card-block" id="card-block-all-event">
+            <h4 class="card-title"><%= event.title %> </h4>
+            <h6 class="card-subtitle mb-2 text-muted"><%= event.date %></h6>
+            <p class="card-text">The event <%= event.title %> created by <%= User.find(event.creator_id).full_name %>.
+              It will took place at  <%= event.location %>   </p>
+            <div class="list-group list-group-flush">
+              <li class="list-group-item"> <%=link_to "Show Details", event_path(event) ,class:"card-link"%></li>
+            </div>
+          </div>
+        </div>
+    <% end %>
+
+  </div>
+
+</div>

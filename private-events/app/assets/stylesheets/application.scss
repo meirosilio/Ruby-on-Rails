@@ -33,7 +33,7 @@ a:any-link{
   height: 500px;
 }
 
-.card{
+#main-card.card{
   background-color: rgba(255, 255, 255, 0.95);
   margin-top: 17%;
   margin-left: 25%;
@@ -125,6 +125,25 @@ input#user_remember_me{
   width: 13px;
   height: 13px;
   border-radius: 2%;
-
 }
+
+//all events
+#all-events{
+  width: 20%;
+
+  margin-left: 76px;
+  margin-top: 50px;
+  padding-right: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: #f6682F;
+}
+div#card-block-all-event.card-block{
+  margin: 10px;
+}
+
+//create new event
+#event_description{
+width: 100%;
+}
+
 
