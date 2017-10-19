@@ -22,17 +22,17 @@
   <div class="row">
     <div class="col-md-4 ">
       <h2>Create</h2>
-      <p class="subtitle"> Register to our platfrom. Then create your coolest event   <a class="btn btn-default" href="#" role="button">View details &raquo;</a> </p>
+      <p class="subtitle"> Register to our platfrom. Then create your coolest event   <%= link_to "View details &raquo;".html_safe ,events_path ,class:"btn btn-default" %> </p>
 
     </div>
     <div class="col-md-4">
       <h2>Publish</h2>
-      <p class="subtitle">Post the event to our comunity <a class="btn btn-default" href="#" role="button">View details &raquo;</a> </p>
+      <p class="subtitle">Post the event to our comunity <%= link_to "View details &raquo;".html_safe ,events_path ,class:"btn btn-default" %> </p>
 
     </div>
     <div class="col-md-4">
-      <h2>Manage</h2>
-      <p class="subtitle">Start manage the event by answering quetions to your friends <a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <h2>Track</h2>
+      <p class="subtitle">Track the community activity on the community page <%= link_to "View details &raquo;".html_safe ,community_path ,class:"btn btn-default" %></p>
 
     </div>
   </div>

@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :attended_events,  :through => :event_attendees
 
 
-
   def attending?(event)
     event.attendees.include?(self)
   end
