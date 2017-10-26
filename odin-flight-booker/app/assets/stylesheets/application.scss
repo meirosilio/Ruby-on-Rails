@@ -1,0 +1,42 @@
+@import "bootstrap";
+@import "font-awesome";
+
+
+body{
+  background: image-url('main_photo.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#footer {
+  margin-top: 15%;
+  width: 100%;
+  position: absolute;
+  height: inherit;
+  background-color: #f5f8ff;
+  .footer-block {
+    margin: 20px 0;
+  }
+}
+
+
+
+.card {
+  background-color: rgba(255, 255, 255, 0.51);
+  width:30%;
+}
+
+.btn.btn-primary.btn-block{
+  background-color: transparent;
+  border-color:#212529 ;
+  color: #212529;
+}
+
+.btn.btn-primary.btn-block:hover{
+  background-color: #212529;
+  border-color:#212529 ;
+  color: #fff;
+}
+

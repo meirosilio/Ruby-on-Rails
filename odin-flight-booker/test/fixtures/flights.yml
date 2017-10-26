@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin_airport_id: 1
+  destination_airport_id: 1
+  departure_date: 2017-10-26 15:15:27
+  duration: 1
+
+two:
+  origin_airport_id: 1
+  destination_airport_id: 1
+  departure_date: 2017-10-26 15:15:27
+  duration: 1
