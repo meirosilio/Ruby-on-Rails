@@ -1,0 +1,6 @@
+
+<td><%= flight.id %></td>
+<td><%= flight.departure_date.strftime('%a, %b %d, %Y') %></td>
+<td><%= flight.departure_date.strftime('%I:%M%p') %></td>
+<td><%= flight.origin_airport.location %></td>
+<td><%= flight.destination_airport.location %></td>

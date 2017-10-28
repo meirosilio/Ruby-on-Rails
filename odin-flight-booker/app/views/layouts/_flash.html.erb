@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12 mx-auto my-1">
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+    $(".alert-danger" ).fadeOut(3500);
+    $(".alert-success" ).fadeOut(3500);
+</script>

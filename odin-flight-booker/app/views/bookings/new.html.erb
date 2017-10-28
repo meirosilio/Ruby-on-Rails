@@ -1,0 +1,68 @@
+
+<div class="row mx-5">
+  <div class="col-md-12">
+    <div class="card mx-2 my-2">
+
+      <div class="card-header">
+        <legend>Your Flight Details</legend>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Flight Number:</label> <h6><%= @flight.id %></h6>
+              <label>Flight Date: </label> <h6><%= @flight.departure_date.strftime('%b %d, %y') %></h6>
+              <label>Departure Time: </label> <h6><%= @flight.departure_date.strftime('%H:%M') %></h6>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>From: </label> <h6><%= @flight.origin_airport.location %>(<%= @flight.origin_airport.iata_code %>)</h6>
+              <label>Destination: </label> <h6><%= @flight.destination_airport.location %>(<%= @flight.destination_airport.iata_code %>)</h6>
+              <label>Number Of Passangers: </label> <h6><%= pluralize(@number_of_passangers, 'Passanger') %></h6>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mx-5">
+  <div class="col-md-12">
+    <div class="card mx-2 my-2">
+
+      <div class="card-header">
+        <legend>Fill In The Passanger(s) Details...</legend>
+      </div>
+
+      <%= form_for (@booking) do |booking_form| %>
+          <%= render 'shared/errors', model: @booking %>
+          <%= booking_form.hidden_field(:flight_id, value:@flight.id) %>
+          <% number_of_passangers_counter = 1 %>
+
+          <%= booking_form.fields_for :passengers  do |passangers_form| %>
+              <div class="form-group">
+                <h5 class="mx-2 my-2">Passanger <%= number_of_passangers_counter %>:</h5>
+                <div class="card-body">
+                  <%= passangers_form.label :name%>
+                  <%= passangers_form.text_field :name, class:"form-control"%>
+                  <%= passangers_form.label :email%>
+                  <%= passangers_form.text_field :email, class:"form-control"%>
+                </div>
+              </div>
+              <% number_of_passangers_counter+=1 %>
+          <% end %>
+
+          <div class="card-footer">
+            <%= booking_form.submit "Book Your Flight Now", class:"btn btn-primary btn-block" %>
+          </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

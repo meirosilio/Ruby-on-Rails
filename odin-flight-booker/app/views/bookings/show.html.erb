@@ -1,0 +1,45 @@
+
+<div class="row mx-5">
+  <div class="col-md-12">
+    <div class="card mx-2 my-2">
+
+      <div class="card-header">
+        <legend>Booking Number <%= @booking.id %></legend>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+
+          <div class="col-md-6">
+            <label>Flight Number:</label> <h6><%= @booking.flight_id %></h6>
+            <label>Flight Date</label><h6><%= @flight_details.departure_date.strftime('%B %d, %y') %></h6>
+            <label>Flight Time</label><h6><%= @flight_details.departure_date.strftime('%H:%M') %></h6>
+          </div>
+
+          <div class="col-md-6">
+            <label>From:</label><h6>
+            <%= @flight_details.origin_airport.location%>(
+            <%= @flight_details.origin_airport.iata_code%>)
+          </h6>
+            <label>Destination:</label><h6>
+            <%= @flight_details.destination_airport.location%>(
+            <%= @flight_details.destination_airport.iata_code%>)
+          </h6>
+            <label>Number Of Passenger(s):</label> <h6><%= pluralize(@passangers_counter, 'Passanger') %></h6>
+          </div>
+
+          <% @booking.passengers.each do |passanger| %>
+
+            <div class="col-md-6">
+              <label>Pessanger Name(<%=passanger.id%>):</label> <h6><%= passanger.name %></h6>
+            </div>
+            <div class="col-md-6">
+              <label>Pessanger Email(<%=passanger.id%>):</label> <h6><%= passanger.email %></h6>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

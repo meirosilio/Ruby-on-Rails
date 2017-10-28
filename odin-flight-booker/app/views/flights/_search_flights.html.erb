@@ -1,50 +1,47 @@
 
-<%= form_for(:flight, url:flights_path, html: {method: :get}) do |f| %>
+
+<%= form_tag(flights_path, method: :get) do %>
 
     <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-5 mx-auto">
         <div class="form-group">
-          <%=f.label :origin_airport_id, 'Departure Airport:' %>
-          <%=f.select :origin_airport_id, options_for_select(@airports), {}, class:'form-control' %>
+          <%= label_tag(:origin_airport_id, 'Departure Airport:') %>
+          <%= select_tag(:origin_airport_id, options_for_select(@airports), class: 'form-control') %>
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-5 mx-auto">
         <div class="form-group">
-          <%= f.label :destination_airport_id, 'Destination Airport:'%>
-          <%= f.select :destination_airport_id,options_for_select(@airports), {}, class:'form-control' %>
+          <%= label_tag(:destination_airport_id, "Destination Airport") %>
+          <%= select_tag(:destination_airport_id, options_for_select(@airports), class:'form-control') %>
         </div>
       </div>
 
     </div>
 
-
     <div class="row">
 
-      <div class="col-md-6">
+      <div class="col-md-5 mx-auto">
         <div class="form-group">
-          <%= f.label :departure_date, 'Departure Date:'%>
-          <%= f.select :departure_date,options_for_select(@dates), {}, class:'form-control' %>
+          <%= label_tag(:departure_date, 'Departure Date:') %>
+          <%= select_tag(:departure_date, options_for_select(@dates), class:'form-control') %>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <%= f.label :passengers, 'Number of passengers:' %>
-        <%= f.select :passengers, options_for_select(1..10),{}, class:'form-control' %>
+    <div class="col-md-5 mx-auto">
+      <div class="form-group">
+        <%= label_tag(:passengers, 'Number Of Passengers:') %>
+        <%= select_tag(:passengers, options_for_select(1..10), class:'form-control') %>
       </div>
+    </div>
 
     </div>
 
     <div class="row">
-      <div class="col-md-10 mx-auto">
-        <%=f.submit 'Search', class:'btn btn-primary btn-block'%>
+      <div class="col-md-10 mx-auto my-2">
+        <%= submit_tag('Search', class:'btn btn-primary btn-block') %>
       </div>
     </div>
-
 <% end %>
-
-
-
-
 

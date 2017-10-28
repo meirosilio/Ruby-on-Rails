@@ -1,17 +1,68 @@
 
-<div class="row my-5">
-  <div class="col-md-1 "></div>
+<div class="row mx-5">
+  <div class="col-md-12">
+    <div class="card  my-2 mx-2">
+      <div class="card-header">
+        <legend>Search For Flights...</legend>
+      </div>
 
-  <div class="card">
-    <div class="card-header">
-      <legend>Search For Flights...</legend>
-    </div>
-    <div class="card-body">
-      <%= render 'flights/search_flights' %>
-
+      <div class="card-block">
+        <%= render "flights/search_flights" %>
+      </div>
     </div>
   </div>
-
-
-
 </div>
+
+
+<% if @flights %>
+    <% if @flights.any? %>
+        <div class="row mx-5">
+          <div class="col-md-12">
+            <div class="card my-2 mx-2">
+
+              <%= form_tag(new_booking_path, method: :get) do %>
+                  <div class="card-header">
+                    <legend>Choose A Flight</legend>
+                  </div>
+
+                  <div class="card-block">
+                    <table class="table table-hover table-striped">
+
+                      <thead>
+                      <th></th>
+                      <th>#</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                      <th>From</th>
+                      <th>To</th>
+                      </thead>
+
+                      <% @flights.each do |flight| %>
+                          <tbody>
+                          <td> <%= radio_button_tag(:flight_id,flight.id) %> </td>
+                          <td> <%= flight.id %> </td>
+                          <td> <%= flight.departure_date.strftime('%b %d, %y') %> </td>
+                          <td> <%= flight.departure_date.strftime('%H:%M') %></td>
+                          <td> <%= flight.origin_airport.iata_code %> </td>
+                          <td> <%= flight.destination_airport.iata_code %> </td>
+                          </tbody>
+                      <% end %>
+
+                    </table>
+                  </div>
+
+
+                  <div class="card-footer">
+                    <%= hidden_field_tag(:passengers, params[:passengers]) %>
+                    <%= submit_tag("Choose A Flight", class:"btn btn-primary btn-block") %>
+                  </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+    <% end %>
+<% end %>
+
+
+
