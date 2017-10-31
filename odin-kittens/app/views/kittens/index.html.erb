@@ -1,0 +1,52 @@
+<div class="row my-3">
+
+  <div class="col-md-1"></div>
+  <div class="col-md-10 mx-auto">
+    <%= render 'layouts/flash' %>
+    <legend>Kitten List</legend>
+
+    <div class="row">
+      <%@kittens.each do |kitten| %>
+          <div class="card ml-2 mt-3" style="width: 20rem;" >
+            <div class="card-header">
+              <legend>Kitten Name: <h5><%=kitten.name %> </h5></legend>
+              <i><%= link_to "", kitten_path(kitten),  class:'fa fa-eye'%></i>
+            </div>
+
+            <div class="card-body">
+              <%age=kitten.age%>
+              <p>Age: <i id="cat-data"> <%= pluralize(age,'year') %> old </i></p>
+              <p>Cuteness:
+                <i id="cat-data"><%= kitten.cuteness %>/5</i>
+
+                <% if Kitten.above_cuteness_average?(kitten.cuteness) %>
+                    <span class="badge badge-primary">Above The Average</span>
+                <% else %>
+                    <span class="badge badge-danger">Below The Average</span>
+                <% end %>
+              </p>
+              <p>Softness:
+                <i id="cat-data"><%= kitten.softness %>/5</i>
+
+                <% if Kitten.above_softness_average?(kitten.softness) %>
+                    <span class="badge badge-primary">Above The Average</span>
+                <% else %>
+                    <span class="badge badge-danger">Below The Average</span>
+                <% end %>
+
+              </p>
+            </div>
+
+            <div class="card-footer">
+              <%= link_to "Update", edit_kitten_path(kitten), class:'btn btn-primary', id:'updelete-btn'%>
+              <%= link_to "Delete", kitten_path(kitten),  class:'btn btn-primary', id:'updelete-btn', method: :delete, confirm: "Are you sure?" %>
+
+
+            </div>
+          </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>

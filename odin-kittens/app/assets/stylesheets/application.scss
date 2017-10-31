@@ -1,0 +1,90 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -200px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 200px;
+}
+#footer{
+  margin-top: 1%;
+}
+
+
+
+//header
+#create-new-kitten-btn{
+  text-decoration: none;
+  color: #007bff;
+  font-size: large;
+}
+#create-new-kitten-btn:hover{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: large;
+}
+
+//index
+#updelete-btn{
+  width: 45%;
+  margin: 1%;
+  background-color: transparent;
+  border-color: black;
+  color: black;
+}
+
+#updelete-btn:hover{
+  width: 45%;
+  margin: 1%;
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+
+h5{
+  color: #007bff;
+}
+#cat-data{
+  color: #007bff;
+}
+
+//create//new
+.btn.btn-primary.btn-block{
+  background-color: transparent;
+  border-color: black;
+  color: black;
+}
+
+.btn.btn-primary.btn-block:hover{
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #ffffff;
+}
+a.fa.fa-eye{
+  margin-left: 98%;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+a.fa.fa-eye:hover{
+  margin-left: 98%;
+  padding: 5px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+
+

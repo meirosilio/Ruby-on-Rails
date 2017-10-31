@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 my-3">
+    <legend>Create a New Kitten Record</legend>
+    <%= form_for(@kitten) do |f| %>
+
+        <%= render 'shared/errors'%>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :age %>
+          <%= f.select :age,options_for_select(1..20) ,{}, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :cuteness %>
+          <%= f.select :cuteness,options_for_select(1..5) ,{}, class:'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :softness %>
+          <%= f.select :softness,options_for_select(1..5) ,{}, class:'form-control' %>
+        </div>
+
+        <%= f.submit "Create a New Record", class: "btn btn-primary btn-block" %>
+
+    <% end %>
+  </div>
+</div>

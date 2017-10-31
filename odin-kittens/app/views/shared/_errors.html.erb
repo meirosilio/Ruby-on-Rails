@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12">
+    <% if @kitten.errors.full_messages.any? %>
+    <% @kitten.errors.full_messages.each do |full_message| %>
+        <div class="alert alert-danger">
+          <ul><%= full_message %></ul>
+        </div>
+    <% end %>
+    <% end %>
+
+  </div>
+</div>

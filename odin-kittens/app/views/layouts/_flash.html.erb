@@ -1,0 +1,9 @@
+
+<% flash.each do |key,value| %>
+<div class="alert alert-<%=key%>"><%= value %> </div>
+<% end %>
+
+
+<script>
+    $(".alert" ).fadeOut(5000);
+</script>
