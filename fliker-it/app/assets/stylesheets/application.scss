@@ -1,0 +1,63 @@
+@import "bootstrap";
+@import "font-awesome";
+
+//page basic layout
+html, body {
+  height: 90%;
+}
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -200px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 200px;
+}
+#footer{
+  margin-top: 1%;
+  background-color: #343a40;
+  color: #fff;
+}
+
+//card
+#search-card{
+  width: 50rem;
+  background-color: rgba(47, 53, 57, 0.9);
+  margin-top: -5%;
+}
+
+#photo-card{
+  padding: 10px;
+  margin: 1% 0 0 7%;
+}
+.jumbotron{
+  background-color: #50a9d0;
+  border-radius: 0;
+}
+
+//test
+
+.flickr ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.flickr ul li
+{
+  border-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.flickr_photo
+{
+  width: 75px;
+  height: 75px;
+  padding: 12px 10px 32px 13px;
+  margin: 0;
+  background: #fff url(../images/pixellated/polaroid.jpg) no-repeat;
+}

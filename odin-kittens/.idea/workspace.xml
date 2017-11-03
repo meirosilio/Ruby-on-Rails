@@ -138,7 +138,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fliker-it" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -414,12 +414,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509362917610</updated>
-      <workItem from="1509362918769" duration="30467000" />
+      <workItem from="1509362918769" duration="31074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30467000" />
+    <option name="totallyTimeSpent" value="31074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
