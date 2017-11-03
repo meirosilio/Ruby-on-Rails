@@ -1,14 +1,16 @@
 class StaticPagesController < ApplicationController
 
-  before_action :api_connection
 
   def index
-    @photos = flickr.photos.search(user_id: "69498982@N03", extras: "url_o")
-  end
-
-  def api_connection
-    FlickRaw.api_key = Figaro.env.flickr_api_key
-    FlickRaw.shared_secret = Figaro.env.flickr_secret
+    user_id = params[:userID]
+    if user_id.nil? || user_id.empty?
+      @photos= flickr.photos.search(user_id: "69498982@N03")
+    else
+      @photos = flickr.photos.search(user_id: user_id.gsub(/\s+/, ""))
+      if @photos.size == 0 && (!user_id.nil? || !user_id.empty?)
+        flash[:info] = "We have not found a user for you"
+      end
+    end
   end
 end
 
