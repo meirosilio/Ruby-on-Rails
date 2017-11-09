@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
     @flight= Flight.find_by(id:params[:booking][:flight_id])
 
     if @booking.save
+      send_confirmation_email
       redirect_to booking_path(@booking)
       flash[:success] = "We saved your resversation details."
     else
@@ -23,6 +24,14 @@ class BookingsController < ApplicationController
     @booking=Booking.find_by(id:params[:id])
     @passangers_counter= @booking.passengers.count
     @flight_details=Flight.find(@booking.flight_id)
+  end
+
+  private
+
+  def send_confirmation_email
+    @booking.passengers.each do |passenger|
+      PassengerMailer.thanks_email(passenger, @flight).deliver_now
+    end
   end
 
   def booking_params

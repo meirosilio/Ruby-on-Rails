@@ -1,0 +1,12 @@
+
+Congratulations!
+======================================
+
+Dear <%= @passenger.name %>, You have successfully booked your flight! Enjoy your flight!
+Flight No: <%= @flight.id %>
+Departure Date: <%= @flight.departure_date.strftime('%a, %b %d, %Y') %>
+Departure Time: <%= @flight.departure_date.strftime('%I:%M%p') %>
+Departing from: <%= @flight.origin_airport.location %>
+Destination: <%= @flight.destination_airport.location %>
+
+Thank you for choosing Odin Flights. Visit us here: <%= @url %>

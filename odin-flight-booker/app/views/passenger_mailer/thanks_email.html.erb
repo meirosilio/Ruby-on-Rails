@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <h1>You have succesfully booked your flight, <%= @passenger.name %>!</h1>
+    <h2>Your flight details:</h2>
+    <ul>
+      <li>Flight No: <%= @flight.id %></li>
+      <li>Departure Date: <%= @flight.departure_date.strftime('%a, %b %d, %Y') %></li>
+      <li>Departure Time: <%= @flight.departure_date.strftime('%I:%M%p') %></li>
+      <li>Departing from: <%= @flight.origin_airport.location %></li>
+      <li>Destination: <%= @flight.destination_airport.location %></li>
+    </ul>
+
+    <p>Thank you for chosing <%= link_to "Odin Flights", @url %></p>
+  </body>
+</html>

@@ -16,3 +16,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function () {
+    $(".alert-danger" ).fadeOut(10000);
+    $(".alert-success" ).fadeOut(10000);
+    const urlBookings = 'http://localhost:3000/bookings';
+    let url = window.location.href;
+    if (url === urlBookings){
+        window.setTimeout(function(){history.back()},9999);
+    }
+
+});
